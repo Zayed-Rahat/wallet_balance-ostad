@@ -1,36 +1,41 @@
-import { useState } from "react";
 import "./App.css";
-import { MetaMaskProvider , useEthers} from "@metamask/sdk-react";
-import { ethers } from 'ethers';
+import React, { Component } from 'react';
+import Web3 from 'web3';
 
-function App() {
-  const { chainId, account } = useEthers();
-  const [balance, setBalance] = useState('');
+class App extends Component {
+  state = {
+    balance: 0,
+  };
 
-  async function getWalletBalance() {
-    const provider = new ethers.providers.Web3Provider(window.ethereum);
-    const balance = await provider.getBalance(account);
-    return ethers.utils.formatEther(balance);
+  async componentDidMount() {
+    if (window.ethereum) {
+      const web3 = new Web3(window.ethereum);
+      try {
+        // Request access to the user's MetaMask account
+        await window.ethereum.enable();
+        const accounts = await web3.eth.getAccounts();
+
+        // Fetch the balance of the connected account
+        const balanceWei = await web3.eth.getBalance(accounts[0]);
+        const balanceEth = web3.utils.fromWei(balanceWei, 'ether');
+
+        this.setState({ balance: balanceEth });
+      } catch (error) {
+        console.error('Error connecting to MetaMask:', error);
+      }
+    } else {
+      console.error('MetaMask is not installed in your browser.');
+    }
   }
 
-  useEffect(() => {
-    if (account) {
-      getWalletBalance().then((balance) => {
-        setBalance(balance);
-      });
-    }
-  }, [account]);
-
-
-  return (
-    <MetaMaskProvider>
+  render() {
+    return (
       <div>
-        <p>Connected to chainId: {chainId}</p>
-        <p>Connected account: {account}</p>
-        <p>Wallet Balance: {balance}</p>
+        <h1>Wallet Balance:</h1>
+        <p>{this.state.balance} ETH</p>
       </div>
-    </MetaMaskProvider>
-  );
+    );
+  }
 }
 
 export default App;
