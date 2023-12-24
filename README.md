@@ -12,5 +12,5 @@ Currently, two official plugins are available:
 `Account 1 Balance`:
 ![1](https://github.com/Zayed-Rahat/wallet_balance-ostad/blob/main/Images/account1.png)
 
-`Account 1 Balance`:
+`Account 2 Balance`:
 ![2](https://github.com/Zayed-Rahat/wallet_balance-ostad/blob/main/Images/account2.png)
