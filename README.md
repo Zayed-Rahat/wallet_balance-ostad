@@ -9,8 +9,8 @@ Currently, two official plugins are available:
 
 ## Wallet Balance Frontend
 
-``:
-![1](https://github.com/Zayed-Rahat/VotingApp_-DAPP-/blob/main/Images/vote_done.png)
+`Account 1 Balance`:
+![1](https://github.com/Zayed-Rahat/wallet_balance-ostad/blob/main/Images/account1.png)
 
-``:
-![2](https://github.com/Zayed-Rahat/VotingApp_-DAPP-/blob/main/Images/vote_not_yet.png)
+`Account 1 Balance`:
+![2](https://github.com/Zayed-Rahat/wallet_balance-ostad/blob/main/Images/account2.png)
