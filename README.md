@@ -6,3 +6,11 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Wallet Balance Frontend
+
+``:
+![1](https://github.com/Zayed-Rahat/VotingApp_-DAPP-/blob/main/Images/vote_done.png)
+
+``:
+![2](https://github.com/Zayed-Rahat/VotingApp_-DAPP-/blob/main/Images/vote_not_yet.png)
